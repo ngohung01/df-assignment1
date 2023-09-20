@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bookstore</title>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:ital,wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+
+  <body>
+    <div id="toast"></div>
+    <div class="wrap"></div>
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <p>Bookstore</p>
+        </div>
+
+        <!-- User Info -->
+        <div class="user_info">
+          <div class="avatar">
+            <img src="./assets/img/avatar.jpg" alt="avatar">
+          </div>
+          <div class="user_name">
+            <p>John Doe</p>
+          </div>
+        </div>
+      </div>
+      
+
+    </header>
+    
+    <!-- MAIN -->
+    <main>
+      <div  class="container">
+        <!-- Form search -->
+        <div class="search_books">
+          <form action="#">
+            <input type="text" id="searchBooks" class="form_control" placeholder="Search books">
+            <button id="addBook" class="form_submit">Add book</button>
+          </form>
+        </div>
+
+        <!-- Table shows iformation about books -->
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Author</th>
+              <th>Topic</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          
+          <tbody id="infBook">
+            <tr>
+              <td>Refactoring</td>
+              <td>Martin Fowler</td>
+              <td>Programming</td>
+              <td>
+                <button id="deleteBook">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add book form -->
+      <section id="myAddBookForm" class="boxModal">
+        <div class="modal">
+          <!-- Modal header -->
+          <div class="modal_header">
+            <h2>Add book</h2>
+            <span class="close">&times;</span>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal_body">
+            <form action="#" id="form_add_book">
+              <div class="form_group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form_control" placeholder="Enter the book title..." required>
+                <span class="form_message" id="name_error"></span>
+              </div>
+
+             <div class="form_group">
+              <label for="author">Author</label>
+              <input type="text" id="author" class="form_control" placeholder="Enter author..." required>
+              <span class="form_message" id="author_error"></span>
+             </div>
+            
+             <div class="form_group">
+              <label for="topic">Topic</label>
+              <select name="topic" id="topic" class="form_control">
+                <option value="0">Programming</option>
+                <option value="1">Database</option>
+                <option value="2">DevOps</option>
+              </select>
+             </div>
+
+             <button id="create" class="form_submit">Create</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Delete book boxModal -->
+      <section id="deleteBookModal" class="boxModal">
+        <div class="modal">
+            <!-- Modal header -->
+            <div class="modal_header">
+              <h2>Delete book</h2>
+              <span class="close">&times;</span>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal_body">
+              <p>Do you want to delete <b id="title_book">Refactoring</b> book?</p>
+            </div>
+
+            <div class="btn">
+              <button id="remove" class="form_submit">Delete</button>
+              <button id="cancel" class="form_submit">Cancel</button>
+            </div>
+           
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
